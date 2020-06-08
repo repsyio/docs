@@ -9,8 +9,9 @@ generate-html:
     stage: compile
     # only:
     #     - master
-    script:
-        - hugo -D
+    command: -D
+    # script:
+    #     - hugo -D
     artifacts:
         paths:
             - frontend/dist
