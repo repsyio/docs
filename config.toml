@@ -1,0 +1,8 @@
+baseURL = "https://docs.repsy.io/"
+languageCode = "en-us"
+title = "Repsy Documentation"
+theme = "hugo-theme-learn"
+
+[params]
+  # Change default color scheme with a variant one. Can be "red", "blue", "green".
+  themeVariant = "repsy"
