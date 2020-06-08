@@ -9,7 +9,7 @@ generate-html:
     stage: compile
     # only:
     #     - master
-    command: -D
+    command: '-D'
     # script:
     #     - hugo -D
     artifacts:
