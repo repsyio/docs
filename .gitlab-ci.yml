@@ -7,14 +7,8 @@ stages:
 generate-html:
     image: klakegg/hugo
     stage: compile
-    # only:
-    #     - master
-    command: '-D'
-    # script:
-    #     - hugo -D
-    artifacts:
-        paths:
-            - frontend/dist
+    script:
+        - hugo -D
 
 
 #   package-docker:
