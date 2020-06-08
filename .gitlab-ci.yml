@@ -11,8 +11,8 @@ package-docker:
     variables:
         DOCKER_TLS_CERTDIR: ''
         DOCKER_HOST: tcp://127.0.0.1:2375
-    only:
-        - master
+    # only:
+    #     - master
     script:
         - docker build -t registry.gitlab.com/fria/repsy/repsy-docs .
         - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
