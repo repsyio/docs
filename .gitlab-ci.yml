@@ -26,11 +26,10 @@ kubernetes-deploy:
     script:
         - sh deploy-kubernetes.sh
   
-#   purge-cloudflare-cache:
-#     image: appropriate/curl
-#     stage: purge-cache
-#     only:
-#       - master
-#     script:
-#       - sh purge-cache.sh
-  
+purge-cloudflare-cache:
+    image: appropriate/curl
+    stage: purge-cache
+    # only:
+    #     - master
+    script:
+        - sh purge-cache.sh
