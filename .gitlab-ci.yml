@@ -1,17 +1,15 @@
 stages:
-    - download
     - package
     - deploy
     - purge-cache
 
-download-template:
-    image: alpine/git
-    stage: download
-    # only:
-    #     - master
-    script:
-        - cd themes
-        - 
+# download-template:
+#     image: alpine/git
+#     stage: download
+#     # only:
+#     #     - master
+#     script:
+#         - cd themes
 
 package-docker:
     image: docker:19
