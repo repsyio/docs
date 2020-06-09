@@ -3,14 +3,6 @@ stages:
     - deploy
     - purge-cache
 
-# download-template:
-#     image: alpine/git
-#     stage: download
-#     # only:
-#     #     - master
-#     script:
-#         - cd themes
-
 package-docker:
     image: docker:19
     stage: package
@@ -22,17 +14,17 @@ package-docker:
     # only:
     #     - master
     script:
-        - docker build -t registry.gitlab.com/fria/repsy/repsy-docs .
+        - docker build --no-cache -t registry.gitlab.com/fria/repsy/repsy-docs .
         - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
         - docker push registry.gitlab.com/fria/repsy/repsy-docs:latest
   
-#   kubernetes-deploy:
-#     image: roffe/kubectl
-#     stage: deploy
-#     only:
-#       - master
-#     script:
-#       - sh deploy-kubernetes.sh
+kubernetes-deploy:
+    image: roffe/kubectl
+    stage: deploy
+    # only:
+    #     - master
+    script:
+        - sh deploy-kubernetes.sh
   
 #   purge-cloudflare-cache:
 #     image: appropriate/curl
