@@ -1,0 +1,35 @@
+stages:
+    - package
+    - deploy
+    - purge-cache
+
+package-docker:
+    image: docker:19
+    stage: package
+    services:
+        - docker:19-dind
+    variables:
+        DOCKER_TLS_CERTDIR: ''
+        DOCKER_HOST: tcp://127.0.0.1:2375
+    only:
+        - master
+    script:
+        - docker build --no-cache -t registry.gitlab.com/fria/repsy/repsy-docs .
+        - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+        - docker push registry.gitlab.com/fria/repsy/repsy-docs:latest
+  
+kubernetes-deploy:
+    image: roffe/kubectl
+    stage: deploy
+    only:
+        - master
+    script:
+        - sh deploy-kubernetes.sh
+  
+purge-cloudflare-cache:
+    image: appropriate/curl
+    stage: purge-cache
+    only:
+        - master
+    script:
+        - sh purge-cache.sh
