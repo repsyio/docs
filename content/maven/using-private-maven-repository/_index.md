@@ -68,7 +68,7 @@ mvn deploy
 
 If you don't have maven installed; you can use `./mvwn deploy` in Linux/Mac or `mvnw deploy` in Windows. Most of modern IDEs and editors also provide methodologies for executing maven commands.
 
-You can find a working example in [GitHub](https://github.com/repsyio/example-maven-deploy-with-m2-settings).
+You can find a working example in [GitHub](https://github.com/repsyio/example-maven-deploy).
 
 ## Using your Java library from your Private Maven Repository
 
@@ -122,4 +122,8 @@ mvn compile
 
 If you don't have maven installed; you can use `./mvwn compile` in Linux/Mac or `mvnw compile` in Windows.
 
-You can find a working example in [GitHub](https://github.com/repsyio/example-maven-usage-with-m2-settings).
+You can find a working example in [GitHub](https://github.com/repsyio/example-maven-usage).
+
+## Furter Reading
+
+You can take a look at Maven Deployment Plug-in offical [documentation](https://maven.apache.org/plugins/maven-deploy-plugin/index.html).
