@@ -50,7 +50,7 @@ If you consider to deploy your java project. You should define distributon repos
     <repository>
       <id>repsy</id>
       <name>My Private Maven Repositoty on Repsy</name>
-      <url>https://repo.repsy.io/mvn/MY REPSY USERNAME/default</url>
+      <url>https://repo.repsy.io/mvn/{MY REPSY USERNAME}/{MY REPOSITORY NAME}</url>
     </repository>
 
     <!-- ... Some other Distribution repository definitions -->
@@ -83,7 +83,7 @@ You have deployed you Java library and you want to use it in you project. You wa
     <repository>
       <id>repsy</id>
       <name>My Private Maven Repositoty on Repsy</name>
-      <url>https://repo.repsy.io/mvn/MY REPSY USERNAME/default</url>
+      <url>https://repo.repsy.io/mvn/{MY REPSY USERNAME}/{MY REPOSITORY NAME}</url>
     </repository>
 
     <!-- ... some other repository definitions -->
@@ -104,7 +104,7 @@ And you need to add your dependency in `pom.xml` as well.
     <repository>
       <id>repsy</id>
       <name>My Private Maven Repositoty on Repsy</name>
-      <url>https://repo.repsy.io/mvn/MY REPSY USERNAME/default</url>
+      <url>https://repo.repsy.io/mvn/{MY REPSY USERNAME}/{MY REPOSITORY NAME}</url>
     </repository>
 
     <!-- ... some other repository definitions -->
